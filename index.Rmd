@@ -5,7 +5,36 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
+```{r}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+```
+
+
 # R Packages
 
-## Small datasets
+## Exploring data in packages:
 
+Install **datacat**:
+
+```{r, eval = FALSE}
+remotes::install("jtr13/datacat")
+```
+
+View information with:
+
+```{r, eval = FALSE}
+library(datacat)
+get_dataset_info("ggplot2") %>% View()
+```
+
+## List of packages with data
+
+**alr4** 
+```{r}
+library(datacat)
+get_dataset_info("alr4") %>% dplyr::pull(name) %>% paste(collapse = ", ")
+```
+**MASS** 
+```{r, results='asis'}
+get_dataset_info("MASS") %>% dplyr::pull(name) %>% paste(collapse = ", ")
+```
