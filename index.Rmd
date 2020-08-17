@@ -14,31 +14,58 @@ library(tidyverse)
 
 # R Packages
 
-## Exploring data in packages locally:
+## Introduction
+
+### Guide to tables below
+
+The tables below provide detailed information about datasets in R packages. The columns represent the following:
+
+
+```{r, results='asis', cache = FALSE}
+# https://haozhu233.github.io/kableExtra/bookdown/use-bootstrap-tables-in-gitbooks-epub.html#gitbook
+options(kableExtra.html.bsTable = T)
+
+# *** Keep output columns in datacat's README.md up to date! ***
+
+`Output columns` <- readLines("https://raw.githubusercontent.com/jtr13/datacat/master/README.md") %>% 
+  stringr::str_extract("^\\*.*$") %>% 
+  na.omit() %>% 
+  stringr::str_remove_all("\\* ")
+  
+tibble::tibble(`Output columns`) %>% knitr::kable(format="html") %>% 
+  kableExtra::kable_styling(bootstrap_options = "basic")
+```
+
+Table columns can be sorted and filtered. Dataset names are linked to documentation if available. Datasets without links are usually included in documentation for a dataset in the same package with a similar name. For example, documentation for `alr4::BGSboys` and `alr4::BGSgirls` is included on the help page for `alr4::BGSall`.
+
+
+###  Exploring data in packages locally
+
+The main function used here is `data_xray()` from the **datacat** package. You can explore datasets in R packages locally as follows.
 
 Install **datacat**:
 
-```{r, eval = FALSE}
-remotes::install("jtr13/datacat")
+```{r, eval = FALSE, echo = TRUE}
+remotes::install_github("jtr13/datacat")
 ```
 
 View information with:
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 library(datacat)
-get_dataset_info("ggplot2") %>% View()
+data_xray("ggplot2") %>% View()
 ```
 
-## List of packages with data
+## R packages (listed separately)
 
 
 ```{r}
 show <- function(packagename) {
   cat(packageDescription(packagename)$Description)
-  datacat::get_dataset_info(packagename, 
+  datacat::data_xray(packagename, 
                    include_package = FALSE,
                    link = TRUE) %>% 
-    DT::datatable(escape = FALSE)
+    DT::datatable(escape = FALSE, filter = 'top')
 }
 ```
 
@@ -78,3 +105,11 @@ show("MASS")
 ```{r, results='asis'}
 show("vcd")
 ```
+
+## R packages (combined)
+
+```{r}
+datacat::data_xray(c("ggplot2", "tidyr"), link = TRUE) %>% 
+  DT::datatable(escape = FALSE)
+```
+

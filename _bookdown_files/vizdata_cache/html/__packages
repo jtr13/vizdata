@@ -1,7 +1,4 @@
 base
-usethis
-devtools
-reprex
 tidyverse
 ggplot2
 tibble
@@ -11,7 +8,6 @@ purrr
 dplyr
 stringr
 forcats
-datacat
 carData
 car
 zoo
@@ -21,16 +17,7 @@ survival
 AER
 effects
 alr4
+boot
 dslabs
 MASS
-lattice
-ggstance
-ggformula
-mosaicData
-Matrix
-mosaic
-mosaicCore
-mosaicCalc
-fastR
-boot
 vcd
