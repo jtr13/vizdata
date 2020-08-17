@@ -1,7 +1,10 @@
 bookdown::gitbook:
   css: style.css
   config:
+    fontsettings:
+      size: 1
     toc:
+      collapse: none
       before: |
         <li><a href="./">Datasets</a></li>
       after: |
