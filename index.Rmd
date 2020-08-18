@@ -18,7 +18,7 @@ library(tidyverse)
 
 ### Guide to tables below
 
-The tables below provide detailed information about datasets in R packages. The columns represent the following:
+The tables below provide detailed information about datasets in R packages. The complete list of output columns is as follows. Columns not initially visible can be viewed by clicking the `Column Visibility` button.
 
 
 ```{r, results='asis', cache = FALSE}
@@ -59,13 +59,25 @@ data_xray("ggplot2") %>% View()
 ## R packages (listed separately)
 
 
+<style>
+  button.dt-button.buttons-columnVisibility.active {
+    font-size: 110%;
+    font-weight: bold;
+  }
+</style>
+
 ```{r}
+
 show <- function(packagename) {
   cat(packageDescription(packagename)$Description)
   datacat::data_xray(packagename, 
                    include_package = FALSE,
                    link = TRUE) %>% 
-    DT::datatable(escape = FALSE, filter = 'top')
+    DT::datatable(escape = FALSE, filter = 'top',
+                  options = list(columnDefs = list(list(targets = c(4, 11), 
+                                                        visible = FALSE)),
+                                 buttons = c('colvis'), dom = 'Bfrtip'),
+                  extensions = 'Buttons')
 }
 ```
 
