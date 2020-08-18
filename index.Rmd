@@ -7,21 +7,44 @@ site: bookdown::bookdown_site
 
 ```{r}
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE,
-                      cache = TRUE)
-library(tidyverse)
+                      results = 'asis')
 ```
 
+```{r}
+library(magrittr)
+get_data <- function(packagename) {
+    file <- paste0("data/", packagename)
+    if (file.exists(file)) {
+    pkgdata <- readRDS(file)
+  } else {
+    pkgdata <- datacat::data_xray(packagename, link = TRUE)
+    saveRDS(pkgdata, file = file)
+  }
+}
 
-# R Packages
+show_data <- function(data, targets = c(1, 5, 10:12)) {
+ DT::datatable(data, escape = FALSE, filter = 'top',
+                  options = list(columnDefs = list(list(targets = targets, 
+                                                        visible = FALSE)),
+                                 buttons = c('colvis'), dom = 'Bfrtip'),
+                  extensions = 'Buttons') 
+}
 
-## Introduction
 
-### Guide to tables below
+show <- function(packagename) {
+  cat(packageDescription(packagename)$Description)
+  get_data(packagename) %>% show_data()
+}
+```
 
-The tables below provide detailed information about datasets in R packages. The complete list of output columns is as follows. Columns not initially visible can be viewed by clicking the `Column Visibility` button.
+# Introduction
+
+### Guide to tables
+
+The tables in the following chapters provide detailed information about datasets in R packages. The complete list of output columns is as follows. Columns not initially visible can be viewed by clicking the `Column Visibility` button.
 
 
-```{r, results='asis', cache = FALSE}
+```{r}
 # https://haozhu233.github.io/kableExtra/bookdown/use-bootstrap-tables-in-gitbooks-epub.html#gitbook
 options(kableExtra.html.bsTable = T)
 
@@ -39,7 +62,7 @@ tibble::tibble(`Output columns`) %>% knitr::kable(format="html") %>%
 Table columns can be sorted and filtered. Dataset names are linked to documentation if available. Datasets without links are usually included in documentation for a dataset in the same package with a similar name. For example, documentation for `alr4::BGSboys` and `alr4::BGSgirls` is included on the help page for `alr4::BGSall`.
 
 
-###  Exploring data in packages locally
+### Exploring data in packages locally
 
 The main function used here is `data_xray()` from the **datacat** package. You can explore datasets in R packages locally as follows.
 
@@ -56,72 +79,4 @@ library(datacat)
 data_xray("ggplot2") %>% View()
 ```
 
-## R packages (listed separately)
-
-
-<style>
-  button.dt-button.buttons-columnVisibility.active {
-    font-size: 110%;
-    font-weight: bold;
-  }
-</style>
-
-```{r}
-
-show <- function(packagename) {
-  cat(packageDescription(packagename)$Description)
-  datacat::data_xray(packagename, 
-                   include_package = FALSE,
-                   link = TRUE) %>% 
-    DT::datatable(escape = FALSE, filter = 'top',
-                  options = list(columnDefs = list(list(targets = c(4, 11), 
-                                                        visible = FALSE)),
-                                 buttons = c('colvis'), dom = 'Bfrtip'),
-                  extensions = 'Buttons')
-}
-```
-
-### AER
-
-```{r, results='asis'}
-show("AER")
-```
-
-### alr4
-
-```{r, results='asis'}
-show("alr4")
-```
-
-### boot
-
-```{r, results='asis'}
-show("boot")
-```
-
-### dslabs
-
-```{r, results='asis'}
-show("dslabs")
-```
-
-
-### MASS
-
-```{r, results='asis'}
-show("MASS")
-```
-
-### vcd
-
-```{r, results='asis'}
-show("vcd")
-```
-
-## R packages (combined)
-
-```{r}
-datacat::data_xray(c("ggplot2", "tidyr"), link = TRUE) %>% 
-  DT::datatable(escape = FALSE)
-```
 

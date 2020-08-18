@@ -1,0 +1,11 @@
+# R packages (combined)
+
+```{r}
+pkgs <- readLines("02-rpack.Rmd") %>% 
+  str_extract("^###.*$") %>% 
+  na.omit() %>% 
+  str_remove("### ")
+
+purrr::map_df(pkgs, get_data) %>% 
+  show_data(targets = c(5, 10:12))
+```
