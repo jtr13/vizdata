@@ -5,7 +5,7 @@ bookdown::gitbook:
     fontsettings:
       size: 1
     toc:
-      collapse: none
+      collapse: section
       before: |
         <li><a href="./">Datasets</a></li>
       after: |

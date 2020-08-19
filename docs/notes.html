@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Dataset guide</title>
-  <meta name="description" content="Dataset guide" />
+  <title>Chapter 4 Notes | Dataset guide</title>
+  <meta name="description" content="Chapter 4 Notes | Dataset guide" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Dataset guide" />
+  <meta property="og:title" content="Chapter 4 Notes | Dataset guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Dataset guide" />
+  <meta name="twitter:title" content="Chapter 4 Notes | Dataset guide" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="r-packages-listed-separately.html"/>
+<link rel="prev" href="r-packages-combined.html"/>
+<link rel="next" href="acknowledgments.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -192,102 +192,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Dataset guide</h1>
-<p class="author"><em>Joyce Robbins</em></p>
-<p class="date"><em>2020-08-19</em></p>
+<div id="notes" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Notes</h1>
+<div id="bookdown" class="section level2">
+<h2><span class="header-section-number">4.1</span> bookdown</h2>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<div id="guide-to-tables" class="section level2">
-<h2><span class="header-section-number">1.1</span> Guide to tables</h2>
-<p>The tables in the following chapters provide detailed information about datasets in R packages. The complete list of output columns is as follows. Columns not initially visible can be viewed by clicking the <code>Column Visibility</code> button.</p>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-Output columns
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-<code>package</code> name of package (optional)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>name</code> name of dataset
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>nr_or_len</code> number of rows or <code>length()</code> (whichever is not NULL)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>nc</code> number of columns
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>add_dim</code> additional dimensions (&gt;= 3, such as for tables)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>first_class</code> first class listed
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>n_cols</code> number of numeric columns
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>i_cols</code> number of integer columns
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>f_cols</code> number of factor columns
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>c_cols</code> number of character columns
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>d_cols</code> number of date columns
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>other_cols</code> number of other columns
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<code>allclasses</code> full list of classes (optional)
-</td>
-</tr>
-</tbody>
-</table>
-<p>Table columns can be sorted and filtered. Dataset names are linked to documentation if available. Datasets without links are usually included in documentation for a dataset in the same package with a similar name. For example, documentation for <code>alr4::BGSboys</code> and <code>alr4::BGSgirls</code> is included on the help page for <code>alr4::BGSall</code>.</p>
-</div>
-<div id="exploring-data-in-packages-locally" class="section level2">
-<h2><span class="header-section-number">1.2</span> Exploring data in packages locally</h2>
-<p>The main function used here is <code>data_xray()</code> from the <strong>datacat</strong> package. You can explore datasets in R packages locally as follows.</p>
-<p>Install <strong>datacat</strong>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;jtr13/datacat&quot;</span>)</a></code></pre></div>
-<p>View information with:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(datacat)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">data_xray</span>(<span class="st">&quot;ggplot2&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">View</span>()</a></code></pre></div>
+<div id="dt" class="section level2">
+<h2><span class="header-section-number">4.2</span> DT</h2>
 
 </div>
 </div>
@@ -296,8 +207,8 @@ Output columns
           </div>
         </div>
       </div>
-
-<a href="r-packages-listed-separately.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r-packages-combined.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="acknowledgments.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -328,7 +239,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/jtr13/vizdata/edit/master/index.Rmd",
+"link": "https://github.com/jtr13/vizdata/edit/master/90-notes.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -336,7 +247,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/jtr13/vizdata/blob/master/index.Rmd",
+"link": "https://github.com/jtr13/vizdata/blob/master/90-notes.Rmd",
 "text": null
 },
 "download": null,

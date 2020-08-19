@@ -26,7 +26,7 @@ show_data <- function(data, targets = c(1, 5, 10:12)) {
  DT::datatable(data, escape = FALSE, filter = 'top',
                   options = list(columnDefs = list(list(targets = targets, 
                                                         visible = FALSE)),
-                                 buttons = c('colvis'), dom = 'Bfrtip'),
+                                 buttons = c('colvis'), dom = 'lBrtip'),
                   extensions = 'Buttons') 
 }
 
@@ -40,21 +40,19 @@ show <- function(packagename) {
 ```{r}
 # Create second chapter
 packages <- readLines("packages.txt")
-chap2 <- c("# R packages (listed separately)", "<style>",
-"button.dt-button.buttons-columnVisibility.active {", "  font-size: 110%;",
-           "  font-weight: bold;", "}", "</style>", "")
   
 add_package <- function(package) c(paste("##", package), "```{r}",
                                    paste0("show('", package, "')"),
                                    "```", "")
 
-writeLines(c(chap2, unlist(lapply(packages, add_package))), "02-new.Rmd")
+writeLines(c("# R packages (listed separately)",
+             unlist(lapply(packages, add_package))), "02-rpack.Rmd")
 ```
 
 
 # Introduction
 
-### Guide to tables
+## Guide to tables
 
 The tables in the following chapters provide detailed information about datasets in R packages. The complete list of output columns is as follows. Columns not initially visible can be viewed by clicking the `Column Visibility` button.
 
@@ -77,7 +75,7 @@ tibble::tibble(`Output columns`) %>% knitr::kable(format="html") %>%
 Table columns can be sorted and filtered. Dataset names are linked to documentation if available. Datasets without links are usually included in documentation for a dataset in the same package with a similar name. For example, documentation for `alr4::BGSboys` and `alr4::BGSgirls` is included on the help page for `alr4::BGSall`.
 
 
-### Exploring data in packages locally
+## Exploring data in packages locally
 
 The main function used here is `data_xray()` from the **datacat** package. You can explore datasets in R packages locally as follows.
 

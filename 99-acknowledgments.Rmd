@@ -1,0 +1,7 @@
+# Acknowledgments
+
+Much inspiration was provided by the participants in the [Dataset Search](https://github.com/ropensci/unconf18/issues/26) discussion on the 2018 ROpenSci unconference issue tracker: Elin Waring, who opened the issue, Sam Albers,  Mark Padgham, Noam Ross, and Ted Laderas.
+
+The [Datasets by package](https://ropenscilabs.github.io/data-packages) dashboard, a 2017 ROpenSci unconference project by Andy Teucher, Richie Cotton, Claudia Vitolo, Jakub Nowosad, and Joe Stachelek was helpful for finding datasets to add. More specifically, this [csv file](https://github.com/ropenscilabs/data-packages/blob/master/data/pkgs_datasets_final_name-title.csv) led me to add the following packages: **agridat, mlbench**
+
+This bookdown project is very similar in nature. The main advantages of the current project are: 1) it is a curated list not produced by a bot, 2) the interface is more user-friendly, 3) it provides links to dataset help pages.

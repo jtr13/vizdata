@@ -1,10 +1,18 @@
 # R packages (combined)
 
-```{r}
+```{r, eval = FALSE}
 pkgs <- readLines("02-new.Rmd") %>% 
   stringr::str_extract("^##.*$") %>% 
   na.omit() %>% 
   stringr::str_remove("## ")
+
+purrr::map_df(pkgs, get_data) %>% 
+  show_data(targets = c(5, 10:12))
+```
+
+
+```{r}
+pkgs <- readLines("packages.txt")
 
 purrr::map_df(pkgs, get_data) %>% 
   show_data(targets = c(5, 10:12))

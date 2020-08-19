@@ -1,11 +1,4 @@
 # R packages (listed separately)
-<style>
-button.dt-button.buttons-columnVisibility.active {
-  font-size: 110%;
-  font-weight: bold;
-}
-</style>
-
 ## AER
 ```{r}
 show('AER')
@@ -26,9 +19,19 @@ show('alr4')
 show('boot')
 ```
 
+## car
+```{r}
+show('car')
+```
+
 ## dslabs
 ```{r}
 show('dslabs')
+```
+
+## fivethirtyeight
+```{r}
+show('fivethirtyeight')
 ```
 
 ## ggplot2

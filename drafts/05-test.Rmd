@@ -1,0 +1,11 @@
+# Test
+
+```{r, echo = TRUE}
+DT::datatable(iris)
+DT::datatable(iris, options = list(dom = 'r'))
+DT::datatable(iris, options = list(dom = 'f'))
+DT::datatable(iris, options = list(dom = 't'))
+DT::datatable(iris, options = list(dom = 'i'))
+DT::datatable(iris, options = list(dom = 'p'))
+```
+

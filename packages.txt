@@ -2,7 +2,9 @@ AER
 agridat
 alr4
 boot
+car
 dslabs
+fivethirtyeight
 ggplot2
 MASS
 mlbench
