@@ -37,6 +37,21 @@ show <- function(packagename) {
 }
 ```
 
+```{r}
+# Create second chapter
+packages <- readLines("packages.txt")
+chap2 <- c("# R packages (listed separately)", "<style>",
+"button.dt-button.buttons-columnVisibility.active {", "  font-size: 110%;",
+           "  font-weight: bold;", "}", "</style>", "")
+  
+add_package <- function(package) c(paste("##", package), "```{r}",
+                                   paste0("show('", package, "')"),
+                                   "```", "")
+
+writeLines(c(chap2, unlist(lapply(packages, add_package))), "02-new.Rmd")
+```
+
+
 # Introduction
 
 ### Guide to tables
