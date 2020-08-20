@@ -2,7 +2,7 @@ AER
 agridat
 alr4
 boot
-car
+carData
 dslabs
 fivethirtyeight
 ggplot2

@@ -22,8 +22,8 @@ get_data <- function(packagename) {
   }
 }
 
-show_data <- function(data, targets = c(1, 5, 10:12)) {
- DT::datatable(data, escape = FALSE, filter = 'top',
+show_data <- function(data, targets = c(0, 4, 9:11)) {
+ DT::datatable(data, escape = FALSE, rownames = FALSE, filter = 'top',
                   options = list(columnDefs = list(list(targets = targets, 
                                                         visible = FALSE)),
                                  buttons = c('colvis'), dom = 'lBrtip'),
@@ -41,7 +41,7 @@ show <- function(packagename) {
 # Create second chapter
 packages <- readLines("packages.txt")
   
-add_package <- function(package) c(paste("##", package), "```{r}",
+add_package <- function(package) c(paste0("## **", package, "**"), "```{r}",
                                    paste0("show('", package, "')"),
                                    "```", "")
 
@@ -91,5 +91,3 @@ View information with:
 library(datacat)
 data_xray("ggplot2") %>% View()
 ```
-
-

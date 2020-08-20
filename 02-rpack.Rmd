@@ -1,55 +1,55 @@
 # R packages (listed separately)
-## AER
+## **AER**
 ```{r}
 show('AER')
 ```
 
-## agridat
+## **agridat**
 ```{r}
 show('agridat')
 ```
 
-## alr4
+## **alr4**
 ```{r}
 show('alr4')
 ```
 
-## boot
+## **boot**
 ```{r}
 show('boot')
 ```
 
-## car
+## **carData**
 ```{r}
-show('car')
+show('carData')
 ```
 
-## dslabs
+## **dslabs**
 ```{r}
 show('dslabs')
 ```
 
-## fivethirtyeight
+## **fivethirtyeight**
 ```{r}
 show('fivethirtyeight')
 ```
 
-## ggplot2
+## **ggplot2**
 ```{r}
 show('ggplot2')
 ```
 
-## MASS
+## **MASS**
 ```{r}
 show('MASS')
 ```
 
-## mlbench
+## **mlbench**
 ```{r}
 show('mlbench')
 ```
 
-## tidyr
+## **tidyr**
 ```{r}
 show('tidyr')
 ```
