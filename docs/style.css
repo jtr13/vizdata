@@ -13,67 +13,47 @@ pre code {
   white-space: inherit;
 }
 
-/* active button + hovering on nonactive
+/* DATATABLE BUTTON CSS */
+
+/* active button + hover */
 .html-widget .dt-button.buttons-columnVisibility.active:not(.disabled),
-  .dt-button.buttons-columnVisibility:hover:not(.disabled) {
-  font-size: 110%;
+.html-widget .dt-button.buttons-columnVisibility.active:not(.disabled):hover:not(.disabled) {
   font-weight: bold;
-  background-image: linear-gradient(to bottom, #f0f0f0 0%, #8BACF3 100%);
-}
-*/
-
-/* nonactive button + hovering on an active button
-.html-widget .buttons-columnVisibility, .buttons-columnVisibility.active:not(.disabled):hover:not(.disabled) {
-  font-size: 100%;
-  font-weight: normal;
-  background-color: #dadada;
-}
-*/
-
-/* active button */
-.html-widget .dt-button.buttons-columnVisibility.active:not(.disabled),
-  .dt-button.buttons-columnVisibility.active:not(.disabled):hover:not(.disabled){
-  font-size: 110%;
-  font-weight: bold;
-  background-image: linear-gradient(to bottom, #f0f0f0 0%, #8BACF3 100%);
+  background-image: linear-gradient(to bottom, #f0f0f0 0%, #ACCBFF 100%);
 }
 
 
-/* nonactive button */
+/* nonactive button + hover */
 .html-widget .buttons-columnVisibility, .dt-button.buttons-columnVisibility:hover:not(.disabled){
-  font-size: 100%;
   font-weight: normal;
   background-color: #dadada;
 }
 
 
 /* hovering on any button, active or not */
-.html-widget .dt-button.buttons-columnVisibility:not(.active):hover:not(.disabled),
-.dt-button.buttons-columnVisibility.active:not(.disabled):hover:not(.disabled) {
+.html-widget .dt-button.buttons-columnVisibility:not(.active):hover:not(.disabled), .html-widget .dt-button.buttons-columnVisibility.active:not(.disabled):hover:not(.disabled) {
   box-shadow: 0 0 0 2px blue;
 }
 
+/* using :focus for clicking since :active isn't working, at least for background-image DOESN'T WORK IN FIREFOX OR SAFARI */
 
-/* using :focus for clicking since :active isn't working, at least for background-image */
-
-.html-widget .dt-button.buttons-columnVisibility:not(.active):not(.disabled):focus:not(.disabled),
-  .dt-button.buttons-columnVisibility.active:not(.disabled):focus:not(.disabled) {
+/* active --> not active */
+.html-widget .dt-button.buttons-columnVisibility.active:not(.disabled):focus:not(.disabled) {
       font-weight: normal;
       box-shadow: none;
-      background-image: linear-gradient(to bottom, #f0f0f0 0%, grey 100%);
+      background-image: linear-gradient(to bottom, #f0f0f0 0%, #CCCCCC 100%);
   }
 
-.html-widget .dt-button.buttons-columnVisibility:not(.active):not(.disabled):focus:not(.disabled){
+/* not active --> active */
+.html-widget .dt-button.buttons-columnVisibility:not(.active):not(.disabled):focus:not(.disabled) {
     font-weight: bold;
     box-shadow: none;
-    background-image: linear-gradient(to bottom, #f0f0f0 0%, blue 100%);
+    background-image: linear-gradient(to bottom, #f0f0f0 0%, #649EFF 100%);
   }
 
-
-
+/* Create space around "Show entries" so it's not too close to column visibility button */
 
 .dataTables_length {
   margin-top: 8px;
   margin-right: 30px;
 }
-
