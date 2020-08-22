@@ -1,7 +1,7 @@
 # R packages (combined)
 
 ```{r}
-pkgs <- readLines("packages.txt")
+pkgs <- sort(readLines("packages.txt"))
 
 purrr::map_df(pkgs, get_data) %>% 
   show_data(targets = c(4, 9:11))

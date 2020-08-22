@@ -1,11 +1,16 @@
+abd
+ade4
 AER
 agridat
 alr4
 boot
 carData
 dslabs
+EnvStats
 fivethirtyeight
+FSAdata
 ggplot2
+Lock5withR
 MASS
 mlbench
 tidyr
