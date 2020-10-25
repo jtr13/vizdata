@@ -82,3 +82,13 @@ show('mlbench')
 show('tidyr')
 ```
 
+## **vcd**
+```{r}
+show('vcd')
+```
+
+## **vcdExtra**
+```{r}
+show('vcdExtra')
+```
+
