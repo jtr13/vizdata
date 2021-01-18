@@ -13,6 +13,7 @@ ggplot2
 Lock5withR
 MASS
 mlbench
+Sleuth3
 tidyr
 vcd
 vcdExtra
