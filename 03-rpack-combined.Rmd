@@ -1,6 +1,7 @@
 # R packages (combined)
 
 ```{r}
+library(magrittr)
 pkgs <- sort(readLines("packages.txt"))
 
 purrr::map_df(pkgs, get_data) %>% 
