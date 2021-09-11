@@ -77,6 +77,11 @@ show('MASS')
 show('mlbench')
 ```
 
+## **openintro**
+```{r}
+show('openintro')
+```
+
 ## **Sleuth3**
 ```{r}
 show('Sleuth3')

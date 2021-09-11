@@ -18,6 +18,7 @@ ggplot2
 lock5withr
 mass
 mlbench
+openintro
 sleuth3
 tidyr
 vcd
