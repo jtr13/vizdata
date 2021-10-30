@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Page not found | Dataset guide</title>
   <meta name="description" content="Page not found | Dataset guide" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Page not found | Dataset guide" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2021-10-13" />
+<meta name="date" content="2021-10-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 
 
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
@@ -49,16 +50,15 @@
 
 
 
-
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<script src="libs/datatables-binding-0.19/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -189,12 +189,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.21" data-path="r-packages-listed-separately.html"><a href="r-packages-listed-separately.html#vcdextra"><i class="fa fa-check"></i><b>2.21</b> <strong>vcdExtra</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="r-packages-combined.html"><a href="r-packages-combined.html"><i class="fa fa-check"></i><b>3</b> R packages (combined)</a></li>
-<li class="chapter" data-level="4" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>4</b> Notes</a>
+<li class="chapter" data-level="4" data-path="other-data-sources.html"><a href="other-data-sources.html"><i class="fa fa-check"></i><b>4</b> Other data sources</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="notes.html"><a href="notes.html#bookdown"><i class="fa fa-check"></i><b>4.1</b> bookdown</a></li>
-<li class="chapter" data-level="4.2" data-path="notes.html"><a href="notes.html#dt"><i class="fa fa-check"></i><b>4.2</b> DT</a></li>
+<li class="chapter" data-level="4.1" data-path="other-data-sources.html"><a href="other-data-sources.html#us-government"><i class="fa fa-check"></i><b>4.1</b> US Government</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="acknowledgments.html"><a href="acknowledgments.html"><i class="fa fa-check"></i><b>5</b> Acknowledgments</a></li>
+<li class="chapter" data-level="5" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>5</b> Notes</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="notes.html"><a href="notes.html#bookdown"><i class="fa fa-check"></i><b>5.1</b> bookdown</a></li>
+<li class="chapter" data-level="5.2" data-path="notes.html"><a href="notes.html#dt"><i class="fa fa-check"></i><b>5.2</b> DT</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="acknowledgments.html"><a href="acknowledgments.html"><i class="fa fa-check"></i><b>6</b> Acknowledgments</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -230,7 +234,6 @@ the table of contents to find the page you are looking for.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -271,7 +274,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

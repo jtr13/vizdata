@@ -25,6 +25,8 @@ tidyr
 vcd
 vcdextra
 r-packages-combined
+other-data-sources
+us-government
 notes
 bookdown
 dt
