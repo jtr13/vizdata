@@ -15,6 +15,7 @@ envstats
 fivethirtyeight
 fsadata
 ggplot2
+likert
 lock5withr
 mass
 mlbench
