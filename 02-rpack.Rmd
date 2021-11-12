@@ -37,6 +37,11 @@ show('boot')
 show('carData')
 ```
 
+## **datasets**
+```{r}
+show('datasets')
+```
+
 ## **dslabs**
 ```{r}
 show('dslabs')

@@ -10,6 +10,7 @@ agridat
 alr4
 boot
 cardata
+datasets
 dslabs
 envstats
 fivethirtyeight
@@ -26,7 +27,11 @@ vcd
 vcdextra
 r-packages-combined
 other-data-sources
-us-government
+entertainment
+government
+united-states
+medicine
+science
 notes
 bookdown
 dt

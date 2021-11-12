@@ -5,6 +5,7 @@ agridat
 alr4
 boot
 carData
+datasets
 dslabs
 EnvStats
 fivethirtyeight

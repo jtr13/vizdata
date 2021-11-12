@@ -1,6 +1,25 @@
 # Other data sources
 
 
-## US Government
+## Entertainment
+
+Chess https://database.lichess.org/
+
+IMDB https://www.imdb.com/interfaces/
+
+## Government
+
+### United States
 
 Foreign assistance https://foreignassistance.gov/data
+
+## Medicine
+
+Delphi Epidata API https://cmu-delphi.github.io/delphi-epidata/
+(includes COVIDcast data)
+
+PhysioNet https://physionet.org/about/database/
+
+## Science
+
+Biodiversity data https://www.gbif.org/

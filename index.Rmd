@@ -19,22 +19,35 @@ get_data <- function(packagename) {
     # always update data and metadata together
     if (file.exists(datafile) & file.exists(metafile)) {
       pkgdata <- readRDS(datafile)
-      } else {
+    } else {
+      browser()
+      if (packagename == "datasets") {
+        metadata <- list(Description = "Base R datasets")
+        pkgdata <- datacat::data_xray("datasets")
+        } else {
         metadata <- pkgsearch::cran_package(packagename)
-        saveRDS(metadata, file = metafile)
         pkgdata <- datacat::data_xray(packagename, link = TRUE)
-        saveRDS(pkgdata, file = datafile)
         }
+      saveRDS(metadata, file = metafile)
+      saveRDS(pkgdata, file = datafile)
+      }
     pkgdata
     }
 
-show_data <- function(data, targets = c(0, 4, 9:11), description = TRUE) {
- if(description) cat(readRDS(paste0("description/", data$package[1]))$Description)   
- DT::datatable(data, escape = FALSE, rownames = FALSE, filter = 'top',
-                  options = list(columnDefs = list(list(targets = targets, 
-                                                        visible = FALSE)),
-                                 buttons = c('colvis'), dom = 'lBrtip'),
-                  extensions = 'Buttons') 
+show_data <- function(data,
+                      targets = c(0, 4, 9:11),
+                      description = TRUE) {
+  if(description) cat(readRDS(paste0("description/",
+                                     data$package[1]))$Description)   
+  DT::datatable(data,
+                escape = FALSE,
+                rownames = FALSE,
+                filter = 'top',
+                options = list(columnDefs = list(list(targets = targets, 
+                                                      visible = FALSE)),
+                               buttons = c('colvis'),
+                               dom = 'lBrtip'),
+                extensions = 'Buttons') 
 }
 
 
@@ -71,7 +84,7 @@ The tables in the following chapters provide detailed information about datasets
 # https://haozhu233.github.io/kableExtra/bookdown/use-bootstrap-tables-in-gitbooks-epub.html#gitbook
 options(kableExtra.html.bsTable = T)
 
-# *** Keep output columns in datacat's README.md up to date! ***
+# *** Keep output columns in datacat's README.md up to date so this is accurate! ***
 
 `Output columns` <- readLines("https://raw.githubusercontent.com/jtr13/datacat/master/README.md") %>% 
   stringr::str_extract("^\\*.*$") %>% 
