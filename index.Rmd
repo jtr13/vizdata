@@ -121,4 +121,4 @@ I welcome your suggestions on packages to add to this resource. You can either [
 
 I have intentionally left out packages with nondescriptive dataset names such as `ch5ex11`: **[AMCP]()**, **[Devore7]**
 
-If you think this is a mistake, I'm open to discussion on the topic.
+

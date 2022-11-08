@@ -1,8 +1,8 @@
 book_filename: "vizdata"
 output_dir: docs
 delete_merged_file: true
-edit: https://github.com/jtr13/vizdata/edit/master/%s
-view: https://github.com/jtr13/vizdata/blob/master/%s
+edit: https://github.com/jtr13/vizdata/edit/main/%s
+view: https://github.com/jtr13/vizdata/blob/main/%s
 language:
   ui:
     chapter_name: "Chapter "
