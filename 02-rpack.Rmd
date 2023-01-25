@@ -52,6 +52,11 @@ show('dslabs')
 show('EnvStats')
 ```
 
+## **faraway**
+```{r}
+show('faraway')
+```
+
 ## **fivethirtyeight**
 ```{r}
 show('fivethirtyeight')

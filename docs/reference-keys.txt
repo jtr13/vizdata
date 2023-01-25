@@ -13,6 +13,7 @@ cardata
 datasets
 dslabs
 envstats
+faraway
 fivethirtyeight
 fsadata
 ggplot2

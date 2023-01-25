@@ -117,7 +117,7 @@ data_xray("ggplot2") %>% View()
 
 ## Contributing
 
-I welcome your suggestions on packages to add to this resource. You can either [open an issue]() or add the package name to [this file]() and create a pull request.
+I welcome your suggestions on packages to add to this resource. You can either [open an issue](https://github.com/jtr13/vizdata/issues) or add the package name to [this file](https://github.com/jtr13/vizdata/blob/main/packages.txt) and create a pull request.
 
 I have intentionally left out packages with nondescriptive dataset names such as `ch5ex11`: **[AMCP]()**, **[Devore7]**
 

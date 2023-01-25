@@ -8,6 +8,7 @@ carData
 datasets
 dslabs
 EnvStats
+faraway
 fivethirtyeight
 FSAdata
 ggplot2
